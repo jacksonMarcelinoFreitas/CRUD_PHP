@@ -136,11 +136,13 @@
 
 > Neste exemplo, a query SQL é preparada com um placeholder para o valor que será excluído. Em seguida, o valor é vinculado ao placeholder usando o método bindParam(). Finalmente, a query é executada usando o método execute(). Se a execução for bem-sucedida, uma mensagem de sucesso é exibida. Caso contrário, uma mensagem de erro é exibida.
 
-<div class="container">
-    <a href="perfilGitHub">
-        <img src="./assets/Perfil Readme.png" alt="">
-        <p>Jackson Freitas</p>
+<div class="container" align="center">
+    <a href="perfilGitHub" style="display: inline_block">
+        <img width="45px" src="./assets/Perfil Readme.png" alt="imagem de Jackson Freitas">
+        <p>By Jackson Freitas</p>
     </a>
 </div>
+
+
 
 

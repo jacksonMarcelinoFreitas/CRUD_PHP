@@ -67,7 +67,7 @@ form input, button{
     padding: 0 2rem;
     cursor: pointer;
 }
-form .container:nth-child(7){
+form .input-radio{
     align-items: center;
     flex-direction: row;
     justify-content: space-around;
@@ -83,7 +83,7 @@ form .radio{
 }
 
 form input[type="radio"]{
-    width: 2rem;
+    width: 1.5rem;
 }
 
 form input::placeholder{

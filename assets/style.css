@@ -7,7 +7,7 @@
 :root{
     font-size: 62.5%;
 
-    --fonte-app: font-family: 'Roboto', sans-serif;
+    --fonte-app:'Roboto', sans-serif;
     --color-primary: #004261;
     --color-letter: #ffffff;
     --color-bg: #0076AD;
@@ -46,7 +46,7 @@ form h1{
 }
 
 form .container{
-    width: 70%;
+    width: 100%;
     display: flex;
     align-items: left;
     flex-direction: column;
@@ -57,7 +57,7 @@ form label{
     font-size: 2.2rem;
 }
 
-form input, button{
+form input, button, .ver_cadastro{
     width: 100%;
     height: 3.6rem;
     background-color: #0085c36e;
@@ -66,7 +66,17 @@ form input, button{
     border-radius: 0.5rem;
     padding: 0 2rem;
     cursor: pointer;
+    font-size: 1.6rem;
 }
+
+
+form .ver_cadastro{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 form .input-radio{
     align-items: center;
     flex-direction: row;
@@ -90,12 +100,19 @@ form input::placeholder{
     color: #759bad;
 }
 
-form button{
-    width: 50%;
-    background-color: #1c85b97a;
-    font-size: 1.6rem;
-    font-weight: 700;
+form .buttons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4.8rem;
 }
+
+form a{
+    text-decoration: none;
+    color: var(--color-letter);
+}
+
 
 form button:hover{
     cursor: pointer;

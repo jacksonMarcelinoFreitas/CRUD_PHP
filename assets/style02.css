@@ -7,7 +7,7 @@
 :root{
     font-size: 62.5%;
 
-    --fonte-app: font-family: 'Roboto', sans-serif;
+    --fonte-app: 'Roboto', sans-serif;
     --color-primary: #004261;
     --color-letter: #ffffff;
     --color-bg: #0076AD;
@@ -43,7 +43,7 @@ table{
     text-align: left;
     
     border-collapse: collapse;
-    border-radius: 1rem;
+    border-radius: 1rem 1rem 0 0;
 }
 
 table thead{
@@ -79,6 +79,25 @@ table .action{
     gap: .4rem;
 }
 
+.footer_table{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #004261;
+    border-radius: 0 0 1rem 1rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+.footer_table button{
+    background-color: #0076AD;
+    color: #ffffff;
+    border: none;
+    width: 30%;
+    padding: .5rem;
+    border-radius: .5rem;
+
+}
 
 .update_button svg path, .delete_button svg path{
     fill: #67b2e0;

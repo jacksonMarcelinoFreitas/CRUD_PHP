@@ -6,7 +6,7 @@
 
         $connection = connection();
 
-        $sql = "SELECT * FROM cliente";
+        $sql = "SELECT * FROM cliente WHERE ativo='S' ";
         $stmt = $connection->prepare($sql);
         $stmt->execute();
 

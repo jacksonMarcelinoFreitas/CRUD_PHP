@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,10 +11,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Cadastro de Clientes</title>
     <link rel="stylesheet" href="./assets/style.css">
+    <script src="main.js" type="text/javascript"></script>
 </head>
+
 <body>
     <div class="wrapper">
-        <form action="insert.php" method="post" id="form">
+        <?php 
+            if(isset($_GET['mensagem_erro'])){
+                if($_GET['mensagem_erro'] == 1){
+                    echo "Requisição insert inválida";
+                }
+            }
+        
+        ?>
+        <form action="insert.php" method="post" id="form" onsubmit="return validacao();">
             <h1>Cadastro de Clientes</h1>
             <div class="container">
                 <label for="nome">Nome</label>
@@ -46,10 +56,14 @@
                     <input type="radio" id="feminino" name="sexo" value="feminino" checked>
                 </div>
             </div>
-            <button type="submit" name="enviar" type="button">Enviar</button>
+            <div class="buttons">
+                <button type="submit" name="enviar" type="button">Enviar</button>
+                <div class="ver_cadastro">
+                    <a href="./exibir_cadastro.php">Ver cadastros</a>
+                </div>
+            </div>
         </form>
     </div>
 </body>
+
 </html>
-
-

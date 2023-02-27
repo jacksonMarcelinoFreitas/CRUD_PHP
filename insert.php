@@ -13,6 +13,8 @@
         $cidade = $_POST['cidade'];
         $telefone = $_POST['telefone'];
         $sexo = $_POST['sexo'];
+      }else{
+        header('Location: index.php?mensagem_erro=1');
       }
 
       // Insert
@@ -27,11 +29,11 @@
       $stmt->bindValue(':sexo',$sexo);
       $stmt->execute();
 
-      header("Locacation: index02.php");
-      exit;
+      header('Location: index.php');
 
     }catch(Exception $e){
       echo 'Erro ao enviar:', $e->getMessage();
+      header('Location: index.php?mensagem_erro=1');
     }
   }
 

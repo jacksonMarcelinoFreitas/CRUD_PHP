@@ -27,7 +27,6 @@
     try{
         $connection = connection();
         
-        // $sql = "UPDATE cliente SET ativo=:ativo WHERE id_cliente=:id";
         $sql = "UPDATE cliente SET ativo='$ativo' WHERE id_cliente=$id";
 
         $result = $connection->query($sql);
@@ -38,17 +37,11 @@
         }else{
             echo "Erro!".$sql."<br>". $connection->$error;
         }
-    //     try{
-    //         $stmt = $connection->prepare($sql);
+
     }catch (PDOException $e){
         echo 'Erro ao atualizar: '. $e->getMessage();
     };
-    //     $stmt->bindValue(':ativo', $ativo);
-    //     $stmt->bindValue(':id', $id);
-    //     $stmt->execute();
-    // }catch (PDOException $e){
-    //     echo 'Erro ao atualizar: '. $e->getMessage();
-  
+
     
 
 ?>

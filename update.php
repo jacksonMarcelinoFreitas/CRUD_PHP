@@ -3,9 +3,6 @@
     require_once("./connection.php");
 
     function update(){
-
-        $id = $_GET['id'];
-        echo "$id";
         
         try{
             $connection = connection();
@@ -19,7 +16,7 @@
                 $telefone = $_POST['telefone'];
                 $sexo = $_POST['sexo'];
             }else{
-                // header('Location: editar_cadastro.php?mensagem_erro=1');
+                header('Location: editar_cadastro.php?mensagem_erro=1');
             }
     
             $sql = "UPDATE cliente SET nome=:nome, sobrenome=:sobrenome, endereco=:endereco, cidade=:cidade, telefone=:telefone, sexo=:sexo WHERE id_cliente=:id";
@@ -34,8 +31,7 @@
             $stmt->bindValue(':id', $id);
             $stmt->execute();
 
-            // header("Location: exibir_cadastro.php");
-            echo "update feito com sucesso";
+            header("Location: exibir_cadastro.php");
 
         }catch (PDOException $e){
             echo 'Erro ao atualizar: '. $e->getMessage();

@@ -1,29 +1,67 @@
 //criar funcoes para validacao
 
-function validacao(){
+function validacaoInsert(){
     if(document.forms[0].nome.value == ''){
         alert('Por favor digite o nome do cliente!');
         return false;
     }
+    if(document.forms[0].sobrenome.value == ''){
+        alert('Por favor digite o sobrenome do cliente!');
+        return false;
+    }
+    if(document.forms[0].telefone.value == ''){
+        alert('Por favor digite o telefone do cliente!');
+        return false;
+    }
+    if(document.forms[0].endereco.value == ''){
+        alert('Por favor digite o endereco do cliente!');
+        return false;
+    }
+    if(document.forms[0].cidade.value == ''){
+        alert('Por favor digite o cidade do cliente!');
+        return false;
+    }
+
+    if(document.getElementsByName('sexo')[0].checked == false && document.getElementsByName('sexo')[1].checked == false){
+        alert('Por favor selecione o sexo do cliente!');
+        return false;
+    }
 }
 
-// const link = document.getElementsByClassName('link');
+function validacaoUpdate(){
+    if(document.forms[0].id.value == undefined){
+        alert('Não foi possível obter o ID do cliente!');
+        return false;
+    }
+    if(document.forms[0].nome.value == ''){
+        alert('Por favor digite o nome do cliente!');
+        return false;
+    }
+    if(document.forms[0].sobrenome.value == ''){
+        alert('Por favor digite o sobrenome do cliente!');
+        return false;
+    }
+    if(document.forms[0].telefone.value == ''){
+        alert('Por favor digite o telefone do cliente!');
+        return false;
+    }
+    if(document.forms[0].endereco.value == ''){
+        alert('Por favor digite o endereco do cliente!');
+        return false;
+    }
+    if(document.forms[0].cidade.value == ''){
+        alert('Por favor digite o cidade do cliente!');
+        return false;
+    }
 
-// function preventDefault(event){
-//     return event.preventDefault();
-// }
+    if(document.getElementsByName('sexo')[0].checked == false && document.getElementsByName('sexo')[1].checked == false){
+        alert('Por favor selecione o sexo do cliente!');
+        return false;
+    }
+}
 
-// const buttonDelete = document.getElementsByClassName('delete_button');
 
-// buttonDelete.addEventListener('click', deleteConfirm());
 
 function deleteConfirm(){
     confirm("Você tem certeza que deseja excluir este cliente?");
 }
-
-
-// $('.elemento').on('click', function(e) {
-//     e.preventDefault();
-//     alert('Você clicou aqui e nada aconteceu!');
-// });
-

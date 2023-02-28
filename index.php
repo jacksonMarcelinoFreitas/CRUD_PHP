@@ -24,7 +24,7 @@
             }
         
         ?>
-        <form action="insert.php" method="post" id="form" onsubmit="return validacao();">
+        <form action="insert.php" method="post" id="form" onsubmit="return validacaoInsert();">
             <h1>Cadastro de Clientes</h1>
             <div class="container">
                 <label for="nome">Nome</label>
@@ -53,7 +53,7 @@
                 </div>
                 <div class="radio">
                     <label for="feminino">Feminino</label>
-                    <input type="radio" id="feminino" name="sexo" value="feminino" checked>
+                    <input type="radio" id="feminino" name="sexo" value="feminino">
                 </div>
             </div>
             <div class="buttons">

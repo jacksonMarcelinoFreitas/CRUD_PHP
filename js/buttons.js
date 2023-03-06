@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
     excluir = $("a[name='link_exclusao']");
+    voltar = $("div[name='footer_table']");
 
     excluir.click(function(){
         id_registro = $(this).attr("id_registro");
@@ -9,9 +10,6 @@ $(document).ready(function(){
             window.location = "delete.php?id=" + id_registro;
         }
     })
-
-
-    voltar = $("div[name='footer_table']");
 
     voltar.click(function(){
         window.location = "index.php";

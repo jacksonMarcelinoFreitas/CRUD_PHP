@@ -9,9 +9,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
-    <script src="main.js" type="text/javascript"></script>
+    <script src="./js/validar.js" type="text/javascript"></script>
 
     <title>Editar Cadastro</title>
 </head>
@@ -19,7 +19,25 @@
 <body>
     <?php
         require "connection.php";
+        require "select.php";
+        
         $connection = connection();
+        $cliente = showClientToEdit(); 
+        $checkedOrNot = selectSex($cliente);
+        // var_dump($checkedOrNot['masc']);
+
+        if($checkedOrNot){
+
+            $SelectOrNotMasc = '';
+            $SelectOrNotFemi = '';
+
+            if($checkedOrNot['masc'] == 'checked'){
+                $SelectOrNotMasc = 'checked';
+            }else{
+                $SelectOrNotFemi = 'checked';
+            }
+        }
+
 
         if(isset($_GET['mensagem_erro'])){
             if($_GET['mensagem_erro'] == 1){
@@ -27,33 +45,6 @@
             }
         }
         
-        $cliente = [];
-        $id = $_GET['id'];
-
-        if($id){
-            $sql = $connection->prepare("SELECT * FROM cliente WHERE id_cliente = :id");
-            $sql->bindValue(':id', $id);
-            $sql->execute();
-
-            if($sql->rowCount() > 0){
-                $cliente = $sql->fetch(PDO::FETCH_ASSOC);
-                // var_dump($cliente);
-                $sexoMasculinoSelecionado = '';
-                $sexoFemininoSelecionado = '';
-                if($cliente['sexo'] == 'masculino'){
-                    $sexoMasculinoSelecionado = 'checked';
-                }else{
-                    $sexoFemininoSelecionado = 'checked';
-                }
-            }
-            // else{
-            //     header("Location: exibir_cadastro.php");
-            //     exit;
-            // }
-        }else{
-            header("Location: exibir_cadastro.php");
-            exit;
-        }
     ?>
     <div class="wrapper">
         <form action="update.php" method="post" id="form" onsubmit="return validacaoUpdate();">
@@ -84,17 +75,14 @@
                     value="<?php echo $cliente['telefone'];?>">
             </div>
 
-
             <div class="container input-radio">
                 <div class="radio">
                     <label for="masculino">Masculino</label>
-                    <input type="radio" id="masculino" name="sexo" value="masculino"
-                        <?php echo $sexoMasculinoSelecionado;?>>
+                    <input type="radio" id="masculino" name="sexo" value="masculino" <?php echo $SelectOrNotMasc?>>
                 </div>
                 <div class="radio">
                     <label for="feminino">Feminino</label>
-                    <input type="radio" id="feminino" name="sexo" value="feminino"
-                        <?php echo $sexoFemininoSelecionado;?>>
+                    <input type="radio" id="feminino" name="sexo" value="feminino" <?php echo $SelectOrNotFemi?>>
                 </div>
             </div>
 

@@ -13,9 +13,6 @@
 
     <link rel="stylesheet" href="./css/style.css">
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="./js/validar.js" type="text/javascript"></script>
     <script src="./js/modal.js" type="text/javascript"></script>
 </head>
@@ -23,11 +20,19 @@
 <body>
     <div class="wrapper">
         <?php 
-                if(isset($_GET['mensagem_erro'])){
-                    if($_GET['mensagem_erro'] == 1){
+                if(isset($_GET['mensagem'])){
+                    $mensagem = $_GET['mensagem'];
+                    if($mensagem == 1){
                         echo "Requisição insert inválida";
+                        echo    "<script type='text/javascript'>
+                                    alertInsert($mensagem);
+                                </script>";
+                    }else{
+                        echo    "<script type='text/javascript'>
+                                        alertInsert($mensagem);
+                                </script>";
                     }
-                }
+                }  
             ?>
         <form action="insert.php" method="post" id="form" onsubmit="return validacaoInsert();">
             <h1>Cadastro de Clientes</h1>

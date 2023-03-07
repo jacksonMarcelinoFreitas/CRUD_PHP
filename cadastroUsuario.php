@@ -32,7 +32,7 @@
                 <div class="input-form">
                     <label for="password">Senha</label>
                     <div class="senha">
-                        <input name="password" type="password" placeholder="ex.: senha123">
+                        <input class="password" type="password" placeholder="ex.: senha123">
                         <span class="closePass"><img src="./assets/closeEye.png"></span>
                         <span class="showPass hide"><img src="./assets/openEye.png"></span>
                     </div>

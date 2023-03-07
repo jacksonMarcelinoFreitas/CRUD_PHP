@@ -28,10 +28,14 @@ svg{
 }
 
 .wrapper{
-    max-width: 60%;
-    max-height: 500px;
-    overflow: auto;
+    max-width: 60%; 
     margin: 5rem auto;
+}
+
+.container{
+    width: 100%;
+    max-height: 80vh;
+    overflow: auto;
 }
 
 table{
@@ -113,7 +117,7 @@ table .action{
 }
 
 
-.wrapper::-webkit-scrollbar {
+.container::-webkit-scrollbar {
     width: 1rem; 
     height: 1rem; 
     background-color: #213c4d;
@@ -121,11 +125,11 @@ table .action{
     padding: 1px;
 }
 
-.wrapper::-webkit-scrollbar-track {
+.container::-webkit-scrollbar-track {
    
   }
   
-.wrapper::-webkit-scrollbar-thumb {
+.container::-webkit-scrollbar-thumb {
     background-color: #67b2e0;  
     border-radius: 10px;       
     border:none; 

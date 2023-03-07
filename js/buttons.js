@@ -4,10 +4,11 @@ $(document).ready(function(){
     voltar = $("div[name='footer_table']");
     showPassword = $('.showPass');
     closePassword = $('.closePass');
-    inputPassword = $("input[name='password']");
-    console.log(inputPassword);
+    // inputPassword = $("input[name='password']");
+    let inputPassword = document.querySelector('.password');
 
-    console.log(showPassword);
+    // console.log($("input[name='password']").prop('type', 'password'));
+
 
     excluir.click(function(){
         id_registro = $(this).attr("id_registro");
@@ -21,18 +22,30 @@ $(document).ready(function(){
         window.location = "index.php";
     })
 
+    
     closePassword.click(function(){
         showPassword.removeClass('hide');
         closePassword.addClass('hide');
-        inputPassword.setAttribute("type", "text");
+
+        if(inputPassword.getAttribute('type') == 'password') {
+            inputPassword.setAttribute('type', 'text');
+        } else {
+            inputPassword.setAttribute('type', 'password');
+        }
     })
 
     showPassword.click(function(){
         closePassword.removeClass('hide');
         showPassword.addClass('hide');
-        inputPassword.setAttribute("type", "password");
+
+        if(inputPassword.getAttribute('type') == 'text') {
+            inputPassword.setAttribute('type', 'password');
+        } else {
+            inputPassword.setAttribute('type', 'text');
+        }
 
     })
+    
 
 
 

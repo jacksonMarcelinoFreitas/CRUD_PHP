@@ -18,34 +18,40 @@
 
 <body>
     <?php
-        require "connection.php";
-        require "select.php";
-        
-        $connection = connection();
-        $cliente = showClientToEdit(); 
-        $checkedOrNot = selectSex($cliente);
-        // var_dump($checkedOrNot['masc']);
+            require "connection.php";
+            require "select.php";
+            
+            $connection = connection();
+            $cliente = showClientToEdit(); 
+            $checkedOrNot = selectSex($cliente);
+            // var_dump($checkedOrNot['masc']);
 
-        if($checkedOrNot){
-
-            $SelectOrNotMasc = '';
-            $SelectOrNotFemi = '';
-
-            if($checkedOrNot['masc'] == 'checked'){
-                $SelectOrNotMasc = 'checked';
-            }else{
-                $SelectOrNotFemi = 'checked';
+            if($checkedOrNot){
+                $SelectOrNotMasc = '';
+                $SelectOrNotFemi = '';
+                if($checkedOrNot['masc'] == 'checked'){
+                    $SelectOrNotMasc = 'checked';
+                }else{
+                    $SelectOrNotFemi = 'checked';
+                }
             }
-        }
 
-
-        if(isset($_GET['mensagem_erro'])){
-            if($_GET['mensagem_erro'] == 1){
-                echo "Requisição update inválida";
+            
+            if(isset($_GET['mensagem'])){
+                $mensagem = $_GET['mensagem'];
+                if($mensagem == 1){
+                    echo    "<script type='text/javascript'>
+                                alert('Não foi possível realizar a atualização!');
+                            </script>";
+                }else{
+                    echo    "<script type='text/javascript'>
+                                alert('Update feito com sucesso!');
+                            </script>";
+                }
             }
-        }
-        
-    ?>
+            
+            
+        ?>
     <div class="wrapper">
         <form action="update.php" method="post" id="form" onsubmit="return validacaoUpdate();">
             <h1>Editar cadastro</h1>
@@ -89,33 +95,6 @@
             <button type="submit" name="enviar">Atualizar</button>
         </form>
     </div>
-    <!-- <script src="./main.js"></script> -->
 </body>
 
 </html>
-
-
-<?php 
-
-/*
-if($cliente['sexo'] == 'masculino'){
-echo "<div class='radio'>
-<label for='masculino'>Masculino</label>
-<input type='radio' id='masculino' name='sexo' value='masculino' checked>
-</div>
-<div class='radio'>
-<label for='feminino'>Feminino</label>
-<input type='radio' id='feminino' name='sexo' value='feminino' >
-</div> ";
-}else{
-echo "<div class='radio'>
-<label for='feminino'>Feminino</label>
-<input type='radio' id='feminino' name='sexo' value='feminino' checked>
-</div> 
-<div class='radio'>
-<label for='masculino'>Masculino</label>
-<input type='radio' id='masculino' name='sexo' value='masculino' >
-</div>";
-}
-*/
-?>

@@ -79,12 +79,12 @@ form{
     height: 4rem;
     width: 6rem;
     background-color: #0076AD;
-
+    text-align: center;
 }
 
 .senha span img{
-    margin: .8rem;
-    width: 2.8rem;
+    width: 3.5rem;
+
 }
 
 

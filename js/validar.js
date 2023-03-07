@@ -61,6 +61,15 @@ function validacaoUpdate(){
 }
 
 
+function alertInsert(verify){
+    if(verify == 1){
+        alert("Cadastro não foi realizado!");
+        return false;
+    }else{
+        alert('Cadastro de cliente feito com sucesso!');
+        return false;
+    }
+}
 
 function deleteConfirm(){
     confirm("Você tem certeza que deseja excluir este cliente?");

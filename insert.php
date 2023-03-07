@@ -6,7 +6,7 @@
     try{
       $connection = connection();
 
-      if(isset($_POST['enviar'])){
+      if(isset($_POST['button-form'])){
         $nome = $_POST['nome'];
         $sobrenome = $_POST['sobrenome'];
         $endereco = $_POST['endereco'];
@@ -14,7 +14,7 @@
         $telefone = $_POST['telefone'];
         $sexo = $_POST['sexo'];
       }else{
-        header('Location: index.php?mensagem_erro=1');
+        header('Location: cadastroCliente.php?mensagem=1');
       }
 
       // Insert
@@ -29,11 +29,11 @@
       $stmt->bindValue(':sexo',$sexo);
       $stmt->execute();
 
-      header('Location: index.php');
+      header('Location: cadastroCliente.php?mensagem=2');
 
     }catch(Exception $e){
       echo 'Erro ao enviar:', $e->getMessage();
-      header('Location: index.php?mensagem_erro=1');
+      header('Location: cadastroCliente.php?mensagem=1');
     }
   }
 

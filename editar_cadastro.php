@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./css/style.css">
 
-    <script src="./js/validar.js" type="text/javascript"></script>
+    <script src="./js/validar.js" type="text/javascript" defer></script>
 
     <title>Editar Cadastro</title>
 </head>

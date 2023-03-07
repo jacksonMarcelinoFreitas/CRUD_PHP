@@ -69,11 +69,31 @@ form{
     margin-bottom: 1.2rem ;
 }
 
+.senha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.senha span{
+    height: 4rem;
+    width: 6rem;
+    background-color: #0076AD;
+
+}
+
+.senha span img{
+    margin: .8rem;
+    width: 2.8rem;
+}
+
+
 .input-form input{
     height: 4rem;
     width: 100%;
     padding: .4rem .8rem ;
 }
+
 
 .input-form label{
     font-size: 1.6rem;
@@ -93,3 +113,6 @@ form{
     background-color: #77c9ef;
 }
 
+.hide{
+    display: none;
+}
